@@ -1,8 +1,11 @@
+import { useRouter } from 'next/router';
 import Grupo from '../../components/Grupo';
 import NavBar from '../../components/NavBar';
 
+export default function Cidade(){
+    const router = useRouter();
+    const {idCidade} = router.query;
 
-export default function Astorga({}){
     return (
       <div>
         <NavBar></NavBar>
@@ -25,3 +28,34 @@ export default function Astorga({}){
     )
   }
 
+
+  // export const getStaticProps: GetStaticProps = async () =>{
+  //   const prisma = new PrismaClient();
+  //   const cidade = await prisma.cidade.findUnique({
+  //     where:{
+  //       idkey:1,
+  //     }
+  //   })
+  //   return {
+  //     props:{
+  //       cidade,
+  //     }
+  //   }
+  // }
+
+  // export const getStaticPaths: GetStaticPaths = async() =>{
+  //   const prisma = new PrismaClient();
+  //   const cidades = await prisma.cidade.findMany();
+    
+  //   const paths = cidades.map((cidade) =>({
+  //     params: {
+  //       idkey : cidade.idkey.toString(),
+  //       nome : cidade.nome,
+  //       urlbrasao : cidade.urlbrasao,
+  //     },
+  //   }))
+
+  //   return{
+  //      paths, fallback: false
+  //   }
+  // }

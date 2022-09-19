@@ -1,14 +1,31 @@
+import { PrismaClient } from '@prisma/client';
 import Grupo from '../../components/Grupo';
 import NavBar from '../../components/NavBar';
 
 
-export default function Astorga({}){
+   
+
+export async function mostrarCidades() {
+  const prisma = new PrismaClient();
+  const cidade = await prisma.cidade.findUnique({
+    where:{
+      idkey:1
+      }
+    })
+    return{
+      props:{
+        cidade,
+      }
+    }
+}
+
+export default function Astorga({cidade}){
     return (
       <div>
         <NavBar></NavBar>
         <br></br>
         <div id="titulosite">
-          <h1 className="titulocidade">Planos de Gestão Municipal para Astorga</h1>
+          <h1 className="titulocidade">Planos de Gestão Municipal para {cidade.nome}</h1>
           <img className="imagemtitulocidade"src='https://leismunicipais.com.br/img/cidades/pr/astorga.png'></img>
         </div>
         <Grupo 
@@ -24,4 +41,3 @@ export default function Astorga({}){
       </div>
     )
   }
-

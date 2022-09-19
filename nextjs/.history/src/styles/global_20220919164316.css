@@ -78,7 +78,7 @@ h1{
     justify-content: center;
 }
 #titulosite{
-    color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     margin-left: 4%;
     margin-right: 4%;
     display:flex;
@@ -88,7 +88,7 @@ h1{
     flex-wrap:nowrap;
 }
 .titulocidade{
-    color:rgb(255, 255, 255);
+    color:black;
 }
 .grupoMunicipio{
     border-radius:10px;

@@ -1,8 +1,24 @@
+import { PrismaClient } from '@prisma/client';
 import Grupo from '../../components/Grupo';
 import NavBar from '../../components/NavBar';
 
 
-export default function Astorga({}){
+   const prisma = new PrismaClient();
+
+export async function mostrarCidades() {
+  const result = await prisma.cidade.findMany({
+    where:{
+      idkey:1
+      }
+    })
+    return{
+      props:{
+        result,
+      }
+    }
+}
+
+export default function Astorga(){
     return (
       <div>
         <NavBar></NavBar>
@@ -24,4 +40,3 @@ export default function Astorga({}){
       </div>
     )
   }
-

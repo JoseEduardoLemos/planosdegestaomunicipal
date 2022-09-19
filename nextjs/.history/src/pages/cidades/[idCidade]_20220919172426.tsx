@@ -1,14 +1,17 @@
+import { PrismaClient } from '@prisma/client';
+import { useRouter } from 'next/router';
 import Grupo from '../../components/Grupo';
 import NavBar from '../../components/NavBar';
 
-
-export default function Astorga({}){
+export default function Cidade(cidade){
+    const router = useRouter();
+    const {idCidade} = router.query;
     return (
       <div>
         <NavBar></NavBar>
         <br></br>
         <div id="titulosite">
-          <h1 className="titulocidade">Planos de Gestão Municipal para Astorga</h1>
+          <h1 className="titulocidade">Planos de Gestão Municipal para {cidade.nome}</h1>
           <img className="imagemtitulocidade"src='https://leismunicipais.com.br/img/cidades/pr/astorga.png'></img>
         </div>
         <Grupo 
@@ -25,3 +28,51 @@ export default function Astorga({}){
     )
   }
 
+
+  export async function getStaticProps(){
+    const cidadeidkey = 1;
+    const prisma = new PrismaClient();
+    const cidade = await prisma.cidade.findFirst({
+      where:{
+        idkey : {
+          equals : cidadeidkey,
+        }
+      }
+    })
+    return{
+      props:{
+        cidade,
+      }
+    }
+  }
+
+  // export const getStaticProps: GetStaticProps = async () =>{
+  //   const prisma = new PrismaClient();
+  //   const cidade = await prisma.cidade.findUnique({
+  //     where:{
+  //       idkey:1,
+  //     }
+  //   })
+  //   return {
+  //     props:{
+  //       cidade,
+  //     }
+  //   }
+  // }
+
+  // export const getStaticPaths: GetStaticPaths = async() =>{
+  //   const prisma = new PrismaClient();
+  //   const cidades = await prisma.cidade.findMany();
+    
+  //   const paths = cidades.map((cidade) =>({
+  //     params: {
+  //       idkey : cidade.idkey.toString(),
+  //       nome : cidade.nome,
+  //       urlbrasao : cidade.urlbrasao,
+  //     },
+  //   }))
+
+  //   return{
+  //      paths, fallback: false
+  //   }
+  // }

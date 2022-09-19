@@ -3,7 +3,7 @@ import CardMunicipio from "../components/CardMunicipio";
 import NavBar from "../components/NavBar";
 
 
-export default function App({cidade,cidade2}){
+export default function App({cidade}){
   return(
     <div>
 
@@ -20,7 +20,7 @@ export default function App({cidade,cidade2}){
       </header>
         <div className='cardsindex'>
           <CardMunicipio title={cidade.nome} link ={`/cidades/${cidade.idkey}`} imgsrc={cidade.urlbrasao}/>
-          <CardMunicipio title={cidade2.nome} link ={`/cidades/${cidade2.idkey}`}  imgsrc={cidade2.urlbrasao}/>
+          <CardMunicipio title={cidade.nome} link ="/cidadess/32"  imgsrc={cidade.urlbrasao}/>
         </div>
     </div>
   )
@@ -35,15 +35,9 @@ export default function App({cidade,cidade2}){
         idkey:1
       }
     });
-    const cidade2 = await prisma.cidade.findUnique({
-      where:{
-        idkey:2
-      }
-    });
     return{
       props:{
         cidade,
-        cidade2,
       },
     }
   }

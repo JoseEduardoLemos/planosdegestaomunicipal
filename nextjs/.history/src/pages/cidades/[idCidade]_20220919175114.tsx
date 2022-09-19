@@ -49,16 +49,19 @@ export default function Cidade(cidade){
 
   export async function getStaticPaths() {
     const prisma = new PrismaClient();
-    const cidade = await prisma.cidade.findMany();
-    const paths = cidade.map((cidade) => ({
-      params: {
-        idkey: cidade.idkey.toString()
-      },
-    }));
     return {
-      paths, fallback: false
+      paths: [
+        // String variant:
+        '/cidades/1',
+        '/cidades/2',
+        // Object variant:
+        { params: { 
+          {idCidade: cidade.idkey.toString()}
+        }}
+      ],
+      fallback: true,
     }
-}
+  }
 
   // export const getStaticProps: GetStaticProps = async () =>{
   //   const prisma = new PrismaClient();

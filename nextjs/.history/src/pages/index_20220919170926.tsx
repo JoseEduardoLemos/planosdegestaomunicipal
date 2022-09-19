@@ -3,7 +3,7 @@ import CardMunicipio from "../components/CardMunicipio";
 import NavBar from "../components/NavBar";
 
 
-export default function App({cidade,cidade2}){
+export default function App({cidade}){
   return(
     <div>
 
@@ -20,7 +20,7 @@ export default function App({cidade,cidade2}){
       </header>
         <div className='cardsindex'>
           <CardMunicipio title={cidade.nome} link ={`/cidades/${cidade.idkey}`} imgsrc={cidade.urlbrasao}/>
-          <CardMunicipio title={cidade2.nome} link ={`/cidades/${cidade2.idkey}`}  imgsrc={cidade2.urlbrasao}/>
+          <CardMunicipio title={cidade.nome} link ={`/cidades/${cidade.idkey}`}  imgsrc={cidade.urlbrasao}/>
         </div>
     </div>
   )

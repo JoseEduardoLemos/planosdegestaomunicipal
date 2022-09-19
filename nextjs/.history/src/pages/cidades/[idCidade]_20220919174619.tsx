@@ -6,7 +6,7 @@ import NavBar from '../../components/NavBar';
 
 export default function Cidade(cidade){
     const router = useRouter();
-    const {idCidade} = router.query;
+    const {idididi} = router.query;
     return (
       <div>
         <NavBar></NavBar>
@@ -48,17 +48,19 @@ export default function Cidade(cidade){
   }
 
   export async function getStaticPaths() {
-    const prisma = new PrismaClient();
-    const cidade = await prisma.cidade.findMany();
-    const paths = cidade.map((cidade) => ({
-      params: {
-        idkey: cidade.idkey.toString()
-      },
-    }));
     return {
-      paths, fallback: false
+      paths: [
+        // String variant:
+        '/cidades/1',
+        '/cidades/2',
+        // Object variant:
+        { params: { 
+            slug: '1'
+        }}
+      ],
+      fallback: true,
     }
-}
+  }
 
   // export const getStaticProps: GetStaticProps = async () =>{
   //   const prisma = new PrismaClient();
