@@ -12,7 +12,7 @@ export default function Cidade(cidade){
         <NavBar></NavBar>
         <br></br>
         <div id="titulosite">
-          <h1 className="titulocidade">Planos de Gestão Municipal para {idCidade}</h1>
+          <h1 className="titulocidade">Planos de Gestão Municipal para {cidade.nome}</h1>
           <img className="imagemtitulocidade"src='https://leismunicipais.com.br/img/cidades/pr/astorga.png'></img>
         </div>
         <Grupo 
@@ -30,9 +30,9 @@ export default function Cidade(cidade){
   }
 
 
-  export async function getServerSideRender(){
+  export async function getStaticProps(){
     const prisma = new PrismaClient();
-    const cidade = await prisma.cidade.findFirst({
+    const cidade = await prisma.cidade.findUnique({
       where:{
         idkey : 1,
       }

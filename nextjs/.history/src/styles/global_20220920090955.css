@@ -56,10 +56,9 @@ h1{
 .card:hover{
     border:solid;
     border-width: thin;
-    border-color: rgba(99, 20, 159, 0.552);
+    border-color: rgba(9, 193, 9, 0.617);
     cursor:pointer;
     box-shadow: 0 0px 50px 0 rgba(255, 255, 255, 0.165);
-    box-shadow: 0 0px 50px 0 rgba(99, 20, 159, 0.552);
     width:350px;
 }
 

@@ -20,6 +20,7 @@ body{
 .botaohome:hover{
     cursor:pointer; 
     background-color: rgb(54, 54, 54); 
+    transition: 1000ms; 
 }
 
 .botaohome{
@@ -27,7 +28,6 @@ body{
     border-radius:4px;
     padding-right:10px;
     padding-left:10px;
-    transition: background-color 1s;
 }
 .botaocidades{
     margin:10px;
@@ -37,8 +37,9 @@ h1{
     margin-left: 4%;
 }
 .card{
-    border-radius: 8px;
-    border-width: thin;
+    border:solid;
+    border-color: rgba(0, 128, 0, 0.617);
+    border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -48,19 +49,17 @@ h1{
     background-color:  rgb(24, 26, 27);
     color:white;
     padding-top:10px;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     box-shadow: 0 0px 50px 0 rgba(0, 0, 0, 0.758);
-    transition: width 0.5s, box-shadow 0.5s, border 0.5s;
+    transition: width 1.5s;
+    transition: height 1.5s;
 }
 .card:hover{
-    border:solid;
-    border-width: thin;
-    border-color: rgba(99, 20, 159, 0.552);
     cursor:pointer;
     box-shadow: 0 0px 50px 0 rgba(255, 255, 255, 0.165);
-    box-shadow: 0 0px 50px 0 rgba(99, 20, 159, 0.552);
-    width:350px;
+    height:300px;
+    width:300px;
 }
 
 .cardsindex{
@@ -122,7 +121,6 @@ h1{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    transition: background-color 0.4s;
 }
 .linkscolor{
     font-size: small;
