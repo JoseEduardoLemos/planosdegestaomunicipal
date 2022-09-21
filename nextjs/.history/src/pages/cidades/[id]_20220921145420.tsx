@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { GetServerSideProps } from 'next';
 import NavBar from '../../components/NavBar';
 
-export default function Cidade({cidade,listaGrupoLink}){
+export default function Cidade({cidade,grupo,link}){
   return(
     <div>
       <header>
@@ -16,15 +16,14 @@ export default function Cidade({cidade,listaGrupoLink}){
 
       <div className="grupoMunicipio">
           <div>
-            {            
-             listaGrupoLink.map(grupoLink =>{
-                return(
+            {/* {            
+             grupo.map(grupo =>{
+                return( */}
                   <div>
                     <div className="tituloCard">
-                      <h4>{grupoLink.grupo.descricao}</h4>
+                      <h4>{grupo.descricao}</h4>
                     </div>
-                        {
-                        grupoLink.listaLink.map(link =>{
+                        {link.map(link =>{
                           return(
                             <div className="grupo">
                               <h5>{link.descricao}</h5>
@@ -40,52 +39,43 @@ export default function Cidade({cidade,listaGrupoLink}){
                         })
                         }
                   </div>
-              )}
-             )
-            }
+                {/* )
+              })
+            } */}
           </div>
         </div>
       </div>
   )
 }
-
   export const getServerSideProps: GetServerSideProps = async (Router) =>{
     const idCidade = Router.query;  
-    
+
     const prisma = new PrismaClient();
 
+
+    
     const cidade = await prisma.cidade.findFirst({
-      where :{
+      where:{
         idkey : Number(idCidade.id)
       }
-    });
-
-    const listaGrupos = await prisma.grupo.findMany({
-      where: {
-        idkey_cidade : cidade.idkey,
+    })
+    const grupo = await prisma.grupo.findFirst({
+      where:{
+        idkey_cidade : cidade.idkey  
+      }
+    })
+    
+    const link = await prisma.link.findMany({
+      where:{
+        idkey_grupos : grupo.idkey
       }
     });
 
-    let listaGrupoLink = []
-
-    for (let i = 0; i < listaGrupos.length; i++) {
-      const grupo = listaGrupos[i];
-      const listaLink = await prisma.link.findMany({
-        where:{
-          idkey_grupo : grupo.idkey
-        }
-       });
-       listaGrupoLink.push({
-        grupo : grupo,
-        listaLink : listaLink,
-       })
-  
-    }
-
-    return{
-      props: {
+    return{ 
+      props:{
         cidade,
-        listaGrupoLink,
+        grupo,
+        link,
       }
     }
   }

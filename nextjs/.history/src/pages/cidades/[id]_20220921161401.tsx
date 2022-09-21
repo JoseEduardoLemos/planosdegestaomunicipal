@@ -27,7 +27,7 @@ export default function Cidade({cidade,listaGrupoLink}){
                         grupoLink.listaLink.map(link =>{
                           return(
                             <div className="grupo">
-                              <h5>{link.descricao}</h5>
+                              <h5>{link.idkey_grupo}</h5>
                               <div>
                                 <Link target={"_blank"} href={link.link}>
                                   <a className='linkscolor'>
