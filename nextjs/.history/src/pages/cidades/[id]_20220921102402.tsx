@@ -6,9 +6,8 @@ import NavBar from '../../components/NavBar';
 export default function Cidade({cidade,grupo,link}){
   return(
     <div>
-      <header>
-      <NavBar></NavBar>  
-      </header>
+      <NavBar></NavBar>
+      <br></br>
       <div id="titulosite">
         <h1 className="titulocidade">{`Planos de Gestão para ${cidade.nome}`}</h1>
         <img className="imagemtitulocidade"src={cidade.urlbrasao}></img>  
@@ -29,7 +28,7 @@ export default function Cidade({cidade,grupo,link}){
                               <h5>{link.descricao}</h5>
                               <div>
                                 <Link target={"_blank"} href={link.link}>
-                                  <a className='linkscolor'>
+                                  <a className='linkscolor linkscolor2'>
                                     <h5>Visualizar &#128065;</h5>
                                   </a>
                                 </Link>

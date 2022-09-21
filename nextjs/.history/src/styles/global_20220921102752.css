@@ -155,10 +155,13 @@ h1{
 }
 
 .linkscolor:hover{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: green;
+    font-size:17px;
     cursor:pointer;
 }
 .linkscolor{
+    transition:font-size 0.5s, color 0.5s, font-family 0.5s;
     font-size: medium;
     color: #8154bb;
 }

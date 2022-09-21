@@ -9,6 +9,7 @@ export default function Cidade({cidade,grupo,link}){
       <header>
       <NavBar></NavBar>  
       </header>
+      <br></br>
       <div id="titulosite">
         <h1 className="titulocidade">{`Planos de Gestão para ${cidade.nome}`}</h1>
         <img className="imagemtitulocidade"src={cidade.urlbrasao}></img>  

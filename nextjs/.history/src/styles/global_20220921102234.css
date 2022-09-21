@@ -153,14 +153,18 @@ h1{
         padding-bottom 0.5s, box-shadow 0.5s, border 0.5s, border-width 0.5s,
         border-color 0.5s, border-radius 0.5s, margin 0.5s;
 }
-
+.linkscolor2:hover{
+    font-size: 17px;
+}
 .linkscolor:hover{
     color: green;
     cursor:pointer;
 }
 .linkscolor{
     font-size: medium;
+   
     color: #8154bb;
+    transition: color 0.5s; 
 }
 .imagemtitulocidade{
     border-radius: 50%;

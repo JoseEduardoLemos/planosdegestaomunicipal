@@ -3,22 +3,21 @@ import { PrismaClient } from '@prisma/client';
 import { GetServerSideProps } from 'next';
 import NavBar from '../../components/NavBar';
 
+
 export default function Cidade({cidade,grupo,link}){
   return(
     <div>
-      <header>
-      <NavBar></NavBar>  
-      </header>
+      <NavBar></NavBar>
+      <br></br>
       <div id="titulosite">
         <h1 className="titulocidade">{`Planos de Gestão para ${cidade.nome}`}</h1>
         <img className="imagemtitulocidade"src={cidade.urlbrasao}></img>  
       </div>
-
       <div className="grupoMunicipio">
           <div>
-            {/* {            
+            {
              grupo.map(grupo =>{
-                return( */}
+                return(
                   <div>
                     <div className="tituloCard">
                       <h4>{grupo.descricao}</h4>
@@ -38,10 +37,10 @@ export default function Cidade({cidade,grupo,link}){
                           )
                         })
                         }
-                  </div>
-                {/* )
+                 </div>
+                )
               })
-            } */}
+            }
           </div>
         </div>
       </div>
@@ -57,18 +56,13 @@ export default function Cidade({cidade,grupo,link}){
         idkey : Number(idCidade.id)
       }
     })
-    const grupo = await prisma.grupo.findFirst({
+    const link = await prisma.link.findMany();
+
+    const grupo = await prisma.grupo.findMany({
       where:{
         idkey_cidade : cidade.idkey  
       }
     })
-    
-    const link = await prisma.link.findMany({
-      where:{
-        idkey_grupos : grupo.idkey
-      }
-    });
-
     return{ 
       props:{
         cidade,

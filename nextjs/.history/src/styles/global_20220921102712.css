@@ -156,9 +156,11 @@ h1{
 
 .linkscolor:hover{
     color: green;
+    font-size:17px;
     cursor:pointer;
 }
 .linkscolor{
+    transition:font-size 1s, color 1s;
     font-size: medium;
     color: #8154bb;
 }

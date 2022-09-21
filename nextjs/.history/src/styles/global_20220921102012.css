@@ -127,7 +127,7 @@ h1{
 
 .grupo:hover{
     background-color: #F0F0F5;
-    box-shadow: 10px 20px 50px 10px rgba(59, 53, 64, 0.491);
+    box-shadow: 10px 0px 50px 0 rgba(59, 53, 64, 0.491);
     font-size: 17px;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -153,14 +153,15 @@ h1{
         padding-bottom 0.5s, box-shadow 0.5s, border 0.5s, border-width 0.5s,
         border-color 0.5s, border-radius 0.5s, margin 0.5s;
 }
-
 .linkscolor:hover{
     color: green;
     cursor:pointer;
 }
 .linkscolor{
     font-size: medium;
+   
     color: #8154bb;
+    transition: color 0.5s; 
 }
 .imagemtitulocidade{
     border-radius: 50%;

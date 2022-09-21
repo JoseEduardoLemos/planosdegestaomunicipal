@@ -6,9 +6,8 @@ import NavBar from '../../components/NavBar';
 export default function Cidade({cidade,grupo,link}){
   return(
     <div>
-      <header>
-      <NavBar></NavBar>  
-      </header>
+      <NavBar></NavBar>
+      <br></br>
       <div id="titulosite">
         <h1 className="titulocidade">{`Planos de Gestão para ${cidade.nome}`}</h1>
         <img className="imagemtitulocidade"src={cidade.urlbrasao}></img>  
@@ -16,12 +15,12 @@ export default function Cidade({cidade,grupo,link}){
 
       <div className="grupoMunicipio">
           <div>
-            {/* {            
+            {            
              grupo.map(grupo =>{
-                return( */}
+                return(
                   <div>
                     <div className="tituloCard">
-                      <h4>{grupo.descricao}</h4>
+                      <h4>{grupo.idkey}</h4>
                     </div>
                         {link.map(link =>{
                           return(
@@ -39,9 +38,9 @@ export default function Cidade({cidade,grupo,link}){
                         })
                         }
                   </div>
-                {/* )
+                )
               })
-            } */}
+            }
           </div>
         </div>
       </div>

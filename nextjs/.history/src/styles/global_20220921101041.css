@@ -27,7 +27,7 @@ body{
 
 }
 .botaohome:active{
-    transition:background-color 1s color 0.5s;
+    transition:background-color 1s;
     background-color: #c7bdbd;
     color:#45226f;
 }
@@ -99,7 +99,7 @@ h1{
     justify-content: center;
 }
 #titulosite{
-    color:#574074;
+    color:rgb(255, 255, 255);
     margin-left: 4%;
     margin-right: 4%;
     display:flex;
@@ -109,7 +109,7 @@ h1{
     flex-wrap:nowrap;
 }
 .titulocidade{
-    color:#574074;
+    color:rgb(255, 255, 255);
 }
 .grupoMunicipio{
     border-radius:10px;
@@ -117,35 +117,36 @@ h1{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    color:#574074;
-    background-color: #e2dfdf;
+    color:white;
+    background-color: rgb(62, 62, 62);
     box-shadow: 0 0px 50px 0 rgba(0, 0, 0, 0.217);
     border:solid;
     border-width:thin;
-    border-color:#574074;
+    border-color:rgba(13, 137, 4, 0.668);
 }
 
 .grupo:hover{
-    background-color: #F0F0F5;
-    box-shadow: 10px 20px 50px 10px rgba(59, 53, 64, 0.491);
+    background-color: rgb(31, 30, 30);
+    box-shadow: 0 0px 50px 0 rgba(90, 20, 159, 0.491);
     font-size: 17px;
     padding-top: 4px;
     padding-bottom: 4px;
     border: solid;
     border-width: thin;
-    border-color:rgba(58, 9, 86, 0.535);
+    border-color:rgba(145, 18, 208, 0.535);
     border-radius:15px;
     margin: 10px;
 }
 .grupo{
     border:solid;
     border-width:1px;
+    border-color:rgba(13, 137, 4, 0.668);
     margin:5px;
     border-radius:5px;
     padding-left: 5%;
     padding-right: 5%;
-    color:#574074;
-    background-color: #d6d6d7;
+    color:white;
+    background-color: rgb(41, 41, 41);
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -153,14 +154,14 @@ h1{
         padding-bottom 0.5s, box-shadow 0.5s, border 0.5s, border-width 0.5s,
         border-color 0.5s, border-radius 0.5s, margin 0.5s;
 }
-
 .linkscolor:hover{
-    color: green;
+    color: rgb(151, 48, 230);
     cursor:pointer;
 }
 .linkscolor{
     font-size: medium;
-    color: #8154bb;
+    color:rgb(255, 255, 255);
+    transition: color 0.5s; 
 }
 .imagemtitulocidade{
     border-radius: 50%;
