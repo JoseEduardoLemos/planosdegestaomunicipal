@@ -1,9 +1,14 @@
 import { Link } from '@mui/material';
 import { PrismaClient } from '@prisma/client';
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 import NavBar from '../../../components/NavBar';
 
 export default function Plano({plano,listaGrupoLink,cidade}){
+  const router = useRouter();
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
   return(
     <div>
       <header>
@@ -43,7 +48,12 @@ export default function Plano({plano,listaGrupoLink,cidade}){
       </div>
   )
 }
+function SomePage(props) {
+  const router = useRouter();
+  // Call this function whenever you want to
+  // refresh props!
 
+}
 
   export const getServerSideProps: GetServerSideProps = async (Router) =>{
     const idPlano = Router.query;  

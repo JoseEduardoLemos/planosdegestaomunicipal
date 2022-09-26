@@ -1,15 +1,15 @@
 import { PrismaClient } from "@prisma/client";
-import Head from "next/head";
 import Card from "../components/Card";
 import NavBar from "../components/NavBar";
+
 
 export default function App({cidade}){
   return(
     <div>
-      <Head>
+      <head>
         <title>Planos de Gestão Municipal</title>
-        <link rel="icon" type="image/x-icon" href="../lib/favicon.ico" />
-      </Head>
+        <link rel="icon" type="image/x-icon" href=""/>  
+      </head>
       <header>
         <NavBar/>
       </header>

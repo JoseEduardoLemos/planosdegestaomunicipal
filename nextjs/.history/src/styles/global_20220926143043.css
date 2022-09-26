@@ -79,10 +79,6 @@ h1{
     margin-top: -10px;
     margin-bottom: 10px;
 }
-.card:active{
-    opacity: 90%;
-}
-
 .imagemCard{
     border-radius:8px;
 }
@@ -151,8 +147,7 @@ h1{
     border-width:1px;
     margin:5px;
     border-radius:5px;
-    padding-left: 5%;
-    padding-right: 5%;
+  
     color:#574074;
     background-color: #EAEEF5;
     display:flex;

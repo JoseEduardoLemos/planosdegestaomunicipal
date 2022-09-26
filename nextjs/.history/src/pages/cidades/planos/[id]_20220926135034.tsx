@@ -44,7 +44,6 @@ export default function Plano({plano,listaGrupoLink,cidade}){
   )
 }
 
-
   export const getServerSideProps: GetServerSideProps = async (Router) =>{
     const idPlano = Router.query;  
     
@@ -67,7 +66,7 @@ export default function Plano({plano,listaGrupoLink,cidade}){
         idkey_plano : plano.idkey,
         AND : {
           links :{
-            some :{
+            every :{
               idkey : {
                 not : undefined,
               }
@@ -85,7 +84,7 @@ export default function Plano({plano,listaGrupoLink,cidade}){
         where:{
           idkey_grupo : grupo.idkey
         },
-        orderBy : { idkey : 'asc'}
+        orderBy : { descricao : 'asc'}
        });
        listaGrupoLink.push({
         grupo : grupo,

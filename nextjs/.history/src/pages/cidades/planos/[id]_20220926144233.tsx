@@ -44,7 +44,6 @@ export default function Plano({plano,listaGrupoLink,cidade}){
   )
 }
 
-
   export const getServerSideProps: GetServerSideProps = async (Router) =>{
     const idPlano = Router.query;  
     

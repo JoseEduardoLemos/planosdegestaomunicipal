@@ -79,10 +79,6 @@ h1{
     margin-top: -10px;
     margin-bottom: 10px;
 }
-.card:active{
-    opacity: 90%;
-}
-
 .imagemCard{
     border-radius:8px;
 }
@@ -208,6 +204,7 @@ h1{
     color:#dddddd;
     border-width: thin;
     border-color:rgba(58, 9, 86, 0.535);
+    border-radius:15px;
     width:85vw;  
     cursor:pointer;
 }
@@ -225,16 +222,11 @@ h1{
      color 0.5s, width 0.5s, height 0.5s;
     margin-bottom: 12px;
     text-align: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
     border:solid;
     border-width:1px;
     border-radius:5px;
-    color:#dddddd;
+    color:#574074;  
     background-color: #f0efef;
     height: 8vh;
-    z-index: 1;
-    width:80vw;
-    color:#574074;
+    width:80vw;     
 }

@@ -8,7 +8,6 @@ export default function App({cidade}){
     <div>
       <Head>
         <title>Planos de Gestão Municipal</title>
-        <link rel="icon" type="image/x-icon" href="../lib/favicon.ico" />
       </Head>
       <header>
         <NavBar/>

@@ -80,7 +80,7 @@ h1{
     margin-bottom: 10px;
 }
 .card:active{
-    opacity: 90%;
+    opacity: 10%;
 }
 
 .imagemCard{

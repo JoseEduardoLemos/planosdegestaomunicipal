@@ -17,7 +17,7 @@ export default function Cidade({cidade,planos}){
           {
             planos.map(planos =>{
               return(
-                <CardPlano title={planos.descricao} link ={`/cidades/planos/${planos.idkey}`}/>
+                <CardPlano title={planos.descricao} link ={`/cidades/planos/${planos.idkey}`} imgsrc={planos.url_imagem_plano}/>
               )
             })
           }
@@ -38,7 +38,7 @@ export default function Cidade({cidade,planos}){
     
     const planos = await prisma.plano.findMany({
       orderBy:{
-        descricao : 'desc',
+        descricao : 'asc',
       },
       where:{
         idkey_cidade : cidade.idkey,
