@@ -11,7 +11,7 @@ export default function Cidade({cidade,planos}){
       </header>
       <br></br>
       <div id="titulosite">
-        <h1 className="titulocidade">{`Planos de Gestão Municipal para a cidade de ${cidade.nome}`}</h1>
+        <h1 className="titulocidade">{`Planos de Gestão Municicpal para a cidade de ${cidade.nome}`}</h1>
       </div>
         <div className='cardsindex'>
           {
