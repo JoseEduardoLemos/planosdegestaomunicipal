@@ -1,8 +1,23 @@
 version: '3'
 
 services:
+  database:
+    image: postgres:15.0-alpine
+    environment:
+      - POSTGRES_USER=pgm
+      - POSTGRES_PASSWORD=pgm
+    networks:
+      - pgm-net
   app:
-      image: docker-nextjs-dev
-      build: .
-      ports:  
-        - 3000:3000
+    image: pgm:latest
+    environment:
+      - DATABASE_URL=postgresql://pgm:pgm@database:5432/documentos?schema=documentos
+    ports:  
+      - 3000:3000
+    networks:
+      - pgm-net
+    depends_on:
+      - database
+networks:
+  pgm-net:
+    driver: bridge
