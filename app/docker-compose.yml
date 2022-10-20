@@ -6,8 +6,3 @@ services:
       build: .
       ports:  
         - 3000:3000
-  database:
-      image: docker-postgresql
-      build: .
-      ports:
-        - 5432:5432
