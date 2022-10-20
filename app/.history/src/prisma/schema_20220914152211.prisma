@@ -1,0 +1,19 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("postgresql://sites:sites@localhost:5432/documentos?schema=documentos")
+}
+
+
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  published Boolean @default(true)
+  authorId  Int
+  author    User    @relation(fields: [authorId], references: [id])
+}

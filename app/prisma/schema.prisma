@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model cidade{
+  idkey Int @id @unique @default(autoincrement())
+  nome String
+  urlbrasao String
+
+  planos plano[]
+}
+
+model plano{
+  idkey Int @id @unique @default(autoincrement())
+  descricao String
+  idkey_cidade Int?
+  url_imagem_plano String
+  cidade cidade? @relation(fields:[idkey_cidade],references:[idkey])
+
+  grupos grupo[]
+}
+model grupo{
+  idkey Int @id @unique @default(autoincrement())
+  idkey_plano Int? 
+  descricao String
+
+  plano plano? @relation(fields:[idkey_plano],references:[idkey])
+  links link[]
+}
+
+model link{
+  idkey Int @id @unique @default(autoincrement())
+  idkey_grupo Int?
+  link String
+  descricao String
+  mime String 
+  nomeArquivo String
+
+  grupo grupo? @relation(fields:[idkey_grupo], references:[idkey])
+}
+

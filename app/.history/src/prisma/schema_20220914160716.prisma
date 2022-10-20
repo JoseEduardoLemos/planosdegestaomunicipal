@@ -1,0 +1,20 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Grupos{
+  idkey Int @id @unique @default(autoincrement())
+  descricao String
+  idkey_cidade Int
+}
+
+model Cidade {
+  idkey Int @id @unique @default(autoincrement())
+  nomeCidade  String
+  idkey_grupo Int
+}
+
+
+
