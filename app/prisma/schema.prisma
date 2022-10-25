@@ -23,7 +23,6 @@ model plano{
   idkey Int @id @unique @default(autoincrement())
   descricao String
   idkey_cidade Int?
-  url_imagem_plano String
   cidade cidade? @relation(fields:[idkey_cidade],references:[idkey])
 
   grupos grupo[]
@@ -43,7 +42,7 @@ model link{
   link String
   descricao String
   mime String 
-  nomeArquivo String
+  nome_arquivo String
 
   grupo grupo? @relation(fields:[idkey_grupo], references:[idkey])
 }
